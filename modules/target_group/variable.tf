@@ -9,3 +9,9 @@ variable "path" {
 variable "port" {
   type = number
 }
+
+
+variable "name" {
+  description = "Name of the target group"
+  type        = string
+}
