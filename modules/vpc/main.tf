@@ -1,7 +1,7 @@
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
   tags = {
-    Name        = vpc-uc-3
+    Name        = "vpc-uc-3"
   }
 }
 
@@ -9,7 +9,7 @@ resource "aws_vpc" "main" {
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.main.id
   tags = {
-    Name        = igw-uc-3
+    Name        = "igw-uc-3"
   }
 }
 
