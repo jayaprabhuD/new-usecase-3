@@ -9,3 +9,7 @@ variable "tg_arns" {
 variable "security_groups" {
    type = list(string)
 }
+
+variable "vpc_id" {
+  type = string
+}
