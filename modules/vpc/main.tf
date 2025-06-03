@@ -17,11 +17,11 @@ resource "aws_internet_gateway" "igw" {
 resource "aws_subnet" "public" {
   count                   = 2
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = cidrsubnet("10.0.0.0/20", 4, count.index)
+  cidr_block              = cidrsubnet("10.0.1.0/20", 4, count.index)
   map_public_ip_on_launch = true
   availability_zone       = data.aws_availability_zones.available.names[count.index]
   tags = {
-    Name = "PublicSubnet-${count.index}"
+    Name = "public-subnet-${count.index}"
   }
 }
 
@@ -52,6 +52,3 @@ output "public_subnets" {
   value = aws_subnet.public[*].id
 }
 
-#output "private_subnets" {
-#  value = aws_subnet.private[*].id
-#}
