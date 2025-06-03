@@ -1,8 +1,5 @@
 module "vpc" {
-  source = "./modules/vpc"
-  name           = var.name
-  vpc_cidr_block = var.vpc_cidr_block
-  
+  source = "./modules/vpc" 
 }
 
 module "alb" {
@@ -52,7 +49,7 @@ module "instance" {
   subnet_id       = module.vpc.public_subnets[0]
   vpc_security_group_ids = [module.sg_group.ec2_security_group_id]
   user_data       = local.user_data
-  name            = "Docker-instance"
+  name            = "uc3-instance"
 }
 
 
