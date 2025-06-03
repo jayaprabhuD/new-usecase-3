@@ -4,7 +4,7 @@ module "vpc" {
 
 module "alb" {
   source      = "./modules/alb"
-  vpc_id      = module.vpc.vpc_id
+##vpc_id      = module.vpc.vpc_id
   subnets     = module.vpc.public_subnets
   security_groups = [module.sg_group.alb_security_group_id]
   tg_arns     = [module.target_group.arn]
