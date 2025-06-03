@@ -1,5 +1,5 @@
-resource "aws_lb" "this" {
-  name               = "alb"
+resource "aws_lb" "app" {
+  name               = "app-alb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = var.security_groups
@@ -7,7 +7,7 @@ resource "aws_lb" "this" {
 }
 
 resource "aws_lb_listener" "http" {
-  load_balancer_arn = aws_lb.this.arn
+  load_balancer_arn = aws_lb.app.arn
   port              = 80
   protocol          = "HTTP"
   default_action {
@@ -16,8 +16,6 @@ resource "aws_lb_listener" "http" {
   }
 }
 
-
-
 output "alb_dns_name" {
-  value = aws_lb.this.dns_name
+  value = aws_lb.app.dns_name
 }

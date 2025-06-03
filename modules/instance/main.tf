@@ -5,7 +5,7 @@ resource "aws_instance" "app" {
   vpc_security_group_ids = var.vpc_security_group_ids
   user_data     = var.user_data
   tags = {
-    Name = var.name
+    Name = app-instance
   }
 }
 
