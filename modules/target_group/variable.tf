@@ -1,8 +1,4 @@
-variable "vpc_id" {
-  type = string
-}
-
-variable "path" {
+variable "name" {
   type = string
 }
 
@@ -10,8 +6,10 @@ variable "port" {
   type = number
 }
 
+variable "vpc_id" {
+  type = string
+}
 
-variable "name" {
-  description = "Name of the target group"
-  type        = string
+variable "path" {
+  type = string
 }
