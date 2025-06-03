@@ -5,3 +5,7 @@ variable "vpc_id" {
 variable "path" {
   type = string
 }
+
+variable "port" {
+  type = number
+}
